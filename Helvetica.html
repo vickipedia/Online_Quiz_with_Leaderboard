@@ -1,0 +1,580 @@
+<html>
+<head>
+<title>Online Quiz</title>
+<style type="text/css">
+
+#Board
+{
+background-image: url("photo.jpg");
+margin-top: 10;
+background-attachment:cover;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	font-family: "helvetica";
+	font-weight: 600;
+}
+
+a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+background-color:#00cc00;
+}
+body {
+    background-image: url("competition-banner-background.jpg");
+    background-color: #cccccc;
+	background-size: cover;
+}
+</style>
+
+<script type="text/javascript">
+        function run() {
+           document.getElementById('intro').style.display="block"; 
+        }
+        </script>
+
+</head>
+
+
+<body onload="run();">
+
+
+<div id="Board" style="color:#0000FF">
+<center>
+<br>
+<font face="Palatino Linotype" color="White">
+<h1>IP PROJECT - ONLINE QUIZ</h1>
+<font face="Helvetica"><h4>By Vicknesh, CSE - 'D'</h4>
+<br>
+</center>
+</font>
+</div>
+<ul>
+  <li><a class="active" href="quiz.html">Home</a></li>
+  <li><a onclick="disp('rules')">Rules</a></li>
+  <li><a onclick="disp('score')">Score</a></li>
+  <li><a onclick="disp('lboard')">Leaderboard</a></li>
+  <li><a onclick="disp('about')">About</a></li>
+</ul>
+<br>
+<br>
+
+<div id="intro" style="display:none">
+<center>
+<font face="helvetica" color="White"> 
+<h1>Welcome to Online Quiz</h1>
+<br>
+</center>
+<fieldset>
+<legend><font size="4"><strong>Register for Quiz</strong></legend>
+<br>
+<font size="4">Enter your name: 
+<input type="text" placeholder="Your username" id="uname">
+<br>
+<br>
+<input type="submit" value="Start Quiz" onclick="ques();"></input>
+</fieldset>
+</div>
+
+
+<div id="q1" style="display:none">
+<fieldset>
+<legend><font size="4" face="helvetica" color="white"><strong>Q1. Where is Indian Astronomical Observatory located?</strong></legend>
+<br>
+<form>
+<input type="radio" name="qr1" value="wrg" checked="checked">Nainital</input><hr>
+<input type="radio" name="qr1" value="crt" id="c1">Ladakh</input><hr>
+<input type="radio" name="qr1" value="wrg">Ooty</input><hr>
+<input type="radio" name="qr1" value="wrg">Darjeeling</input>
+<br>
+<br>
+</form>
+<center>
+<input type="submit" value="Answer" onclick="ans1();"></input>
+</center>
+</fieldset>
+</div>
+
+<div id="q2" style="display:none">
+<fieldset>
+<legend><font size="4" face="helvetica" color="white"><strong>Q2. Identify this famous personality</strong></legend>
+<br>
+<center>
+<img src="gandhi.png" width="600px"></img>
+</center>
+<br>
+<br>
+<form>
+<input type="radio" name="qr2" value="wrg" checked="checked">Jawaharlal Nehru</input><hr>
+<input type="radio" name="qr2" value="wrg">Mahatma Gandhi</input><hr>
+<input type="radio" name="qr2" value="crt" id="c2">Ben Kingsley</input><hr>
+<input type="radio" name="qr2" value="wrg">Rabindranath Tagore</input>
+<br>
+<br>
+</form>
+<center>
+<input type="submit" value="Answer" onclick="ans2();"></input>
+</center>
+</fieldset>
+</div>
+
+<div id="q3" style="display:none">
+<fieldset>
+<legend><font size="4" face="helvetica" color="white"><strong>Q3. What is the official tourism slogan of Tamil Nadu?</strong></legend>
+<br>
+<form>
+<input type="radio" name="qr3" value="wrg" checked="checked">Incredible Tamil Nadu</input><hr>
+<input type="radio" name="qr3" value="crt" id="c3">Enchanting Tamil Nadu</input><hr>
+<input type="radio" name="qr3" value="wrg">Discover Tamil Nadu</input><hr>
+<input type="radio" name="qr3" value="wrg">Gateway to South India</input>
+<br>
+<br>
+</form>
+<center>
+<input type="submit" value="Answer" onclick="ans3();" checked="checked"></input>
+</center>
+</fieldset>
+</div>
+
+<div id="q4" style="display:none">
+<fieldset>
+<legend><font size="4" face="helvetica" color="white"><strong>Q4. Find the connection</strong></legend>
+<br>
+<center>
+<img src="taj-mahal.jpeg" width="600px"></img>
+</center>
+<br>
+<br>
+<form>
+<input type="radio" name="qr4" value="wrg" checked="checked">All 4 places are part of the "7 Wonders of India"</input><hr>
+<input type="radio" name="qr4" value="wrg">All 4 place have been named in Time Magazines's "Best tourism hotspots of 2016"</input><hr>
+<input type="radio" name="qr4" value="wrg">All 4 places have been shown in "Poovukkul Olinthirukkum" song from Jeans</input><hr>
+<input type="radio" name="qr4" value="crt" id="c4">All 4 places have 5-star hotels named after them</input>
+<br>
+<br>
+</form>
+<center>
+<input type="submit" value="Answer" onclick="ans4();"></input>
+</center>
+</fieldset>
+</div>
+
+<div id="q5" style="display:none">
+<fieldset>
+<legend><font size="4" face="helvetica" color="white"><strong>Q5. Which of the following statements are true about this video?</strong></legend>
+<br>
+<center>
+<video width="480" height="360" id="vid" controls>
+  <source src="q5.mp4" type="video/mp4">
+</video>
+</center>
+<br>
+<fieldset>
+<legend><strong>Statements</strong></legend>
+1. Dennis Lillee was the batsman<br>
+2. The batsman used an Aluminium bat<br>
+3. After this incident, ICC brought a new law that the blade of the bat must always be made of wood<br>
+4. The bat was called as "ComBat"<br>
+</fieldset>
+<br>
+<br>
+<form>
+<input type="radio" name="qr5" value="wrg" checked="checked">1 and 2</input><hr>
+<input type="radio" name="qr5" value="wrg">Only 2</input><hr>
+<input type="radio" name="qr5" value="wrg">1,2 and 3</input><hr>
+<input type="radio" name="qr5" value="crt" id="c5">1,2,3 and 4</input>
+<br>
+<br>
+</form>
+<center>
+<input type="submit" value="Answer" onclick="ans5();"></input>
+</center>
+</fieldset>
+</div>
+
+<div id="rules" style="display:none">
+<center>
+<font face="helvetica" color="White">
+<h2>GENERAL GUIDELINES:</h2>
+</center>
+<font color="White" size="5">
+<ol>
+1. All questions are compulsory <br>
+2. +10 points for every correct answer <br>
+3. -5 points for every wrong answer <br>
+4. All questions are of MCQ type <br>
+5. Only one attempt per question <br>
+</ol>
+<br>
+<center>
+<input type="Submit" value="Go Back" name="Back" id="back" onclick="prevdisp();"></input>
+</center>
+</div>
+
+<div id="score" style="display:none">
+<center>
+<font face="helvetica" color="White">
+<h2>Your Score</h2>
+</center>
+<font color="White" size="5">
+<div id="userdisp"></div>
+<hr>
+<div id="q1disp"></div>
+<div id="q2disp"></div>
+<div id="q3disp"></div>
+<div id="q4disp"></div>
+<div id="q5disp"></div>
+<hr>
+<div id="scredisp"></div>
+<br>
+<center>
+<input type="Submit" value="Go Back" name="Back" id="back" onclick="prevdisp();"></input>
+</center>
+</div>
+
+<div id="finish" style="display:none">
+<center>
+<font face="Palatino Linotype" color="White">
+<h2><div id="endname"></div></h2>
+</center>
+<font color="White" size="5">
+<hr>
+<fieldset>
+<legend><strong>RESULT</strong></legend>
+<center>
+<div id="success" style="display:none">
+<font face="Palatino Linotype" color=#66ff66>
+<h2>CONGRATULATIONS! You have successfully passed the quiz!</h2>
+</div><div id="failure" style="display:none">
+<font face="Palatino Linotype" color="white">
+<h2>SORRY! You have failed to pass the quiz.</h2>
+</div><br>
+</center>
+<font color="white">
+<div id="endscr"></div>
+<br>
+</fieldset>
+<br>
+<center>
+<input type="Submit" value="View Answers" name="Back" id="back" onclick="disp('Answers');">               <input type="Submit" value="Start Again" name="Back" id="back" onclick="disp('intro');">
+</center>
+</div>
+
+<div id="about" style="display:none">
+<font face="helvetica" color="White">
+<fieldset>
+<center>
+<legend>
+<h2>DESIGNED BY VICKIPEDIA</h2>
+<legend>
+</center>
+<hr>
+<font color="White" size="5">
+<strong>Institution: 	</strong>Rajalakshmi Engineering College<br>
+<strong>Course: 		</strong>B.E. Computer Science and Engineering<br>
+<strong>Year: 			</strong>III<sup>rd</sup><br>
+<strong>Semester: 		</strong>V<sup>th</sup><br>
+<strong>Class: 			</strong>D<br>
+<strong>Roll: 			</strong>201401200<br>
+<strong>E-Mail:			</strong>skvicknesh@gmail.com<br>
+<strong>Contact: 		</strong>9500035110<br>
+<br>
+</fieldset>
+<br>
+<br>
+<center>
+<input type="Submit" value="Go Back" name="Back" id="back" onclick="prevdisp();"></input>
+</center>
+</div>
+
+<div id="Answers" style="display:none">
+<font face="helvetica" color="White">
+<fieldset>
+<center>
+<legend>
+<h2>Answers</h2>
+<legend>
+</center>
+<hr>
+<font color="White" size="5">
+<fieldset>
+<legend><strong>Question 1: 	</strong>Ladakh</legend>
+<br>
+The Indian Astronomical Observatory (IAO), located near Leh in Ladakh, India, has one of the world's highest sites for optical, infrared and gamma-ray telescopes. It is operated by the Indian Institute of Astrophysics, Bangalore. It is currently the second highest optical telescope in the world, situated at an elevation of 4,500 meters (14,764 ft).
+<br>
+</fieldset>
+<br>
+<fieldset>
+<legend><strong>Question 2: 	</strong>Ben Kingsley</legend>
+<br>
+Ben Kingsley is an Indian-born, Hollywood actor from United Kingdom. He is known for his starring role as Mohandas Gandhi in the 1982 film Gandhi, for which he won the Academy Award for Best Actor.
+<br>
+</fieldset>
+<br>
+<fieldset>
+<legend><strong>Question 3: 	</strong>Enchanting Tamil Nadu</legend>
+<br>
+"Enchanting Tamil Nadu" is the official slogan of Tamil Nadu Tourism Development Corporation. The slogan was officially adopted in 2003.
+<br>
+</fieldset>
+<br>
+<fieldset>
+<legend><strong>Question 4: 	</strong>All 4 places have 5-star hotels named after them</legend>
+<br>
+1. Taj Mahal - Hotel Taj, Mumbai <br>
+2. Brihadeeswarar Temple - ITC Grand Chola, Chennai <br>
+3. Connemara, Ireland - Taj Connemara, Chennai <br>
+4. Jal Mahal - Taj Lake Palace, Udaipur
+<br>
+</fieldset>
+<br>
+<fieldset>
+<legend><strong>Question 5: 	</strong>1,2,3 & 4</legend>
+<br>
+All 4 statements are correct. The incident happened during the Australia v. England 1st Test played in December 1979 at the WACA cricket ground in Perth. 
+<br>
+</fieldset>
+<br>
+</fieldset>
+<br>
+<br>
+<center>
+<input type="Submit" value="Go Back" name="Back" id="back" onclick="prevdisp();"></input>
+</center>
+</div>
+
+<div id="lboard" style="display:none">
+<font face="helvetica" color="White">
+<center>
+<h2><strong>LEADERBOARD</strong></h2>
+</center>
+<hr>
+<div id="l1"></div>
+<div id="l2"></div>
+<div id="l3"></div>
+<div id="l4"></div>
+<div id="l5"></div>
+<hr>
+<center>
+<input type="Submit" value="Go Back" name="Back" id="back" onclick="prevdisp();"></input>
+</center>
+</div>
+<br>
+<br>
+<br>
+
+<script type= text/javascript>
+
+var usernm;
+var obj = new Array();
+var scre,ques1,ques2,ques3,ques4,ques5;
+var chk1,chk2,chk3,chk4,chk5;
+var curr=new Array();
+var ci=0,co=0;
+curr[0]='intro'; 
+
+function prevdisp()
+{
+document.getElementById(curr[ci]).style.display="none";
+document.getElementById(curr[--ci]).style.display="block"; 
+}
+
+function disp(x)
+{
+for(i=0;i<=ci;i++)
+{
+document.getElementById(curr[i]).style.display="none";
+}
+document.getElementById(x).style.display="block";
+curr[++ci]=x;
+}
+
+function ques()
+{
+scre=0;
+document.getElementById("q1disp").innerHTML="Question 1: 0";
+document.getElementById("q2disp").innerHTML="Question 2: 0";
+document.getElementById("q3disp").innerHTML="Question 3: 0";
+document.getElementById("q4disp").innerHTML="Question 4: 0";
+document.getElementById("q5disp").innerHTML="Question 5: 0";
+document.getElementById("scredisp").innerHTML="Total Score: 0";
+usernm=document.getElementById("uname").value;
+if(usernm.length>=1)
+{
+disp('q1');
+document.getElementById("userdisp").innerHTML="User: "+usernm;
+document.getElementById("endname").innerHTML="Thank you for participating "+usernm;
+}
+else
+{
+alert("No username specified");
+}
+}
+
+function ans1()
+{
+if(curr[ci]=='q1')
+{
+if(document.getElementById("c1").checked==true)
+{
+alert("Correct answer!");
+ques1=10;
+scre=ques1;
+}
+else
+{
+alert("Wrong answer.");
+ques1=-5;
+scre=ques1;
+}
+}
+document.getElementById("q1disp").innerHTML="Question 1: "+ques1;
+document.getElementById("scredisp").innerHTML="Total Score: "+scre;
+disp('q2');
+}
+
+function ans2()
+{
+if(curr[ci]=='q2')
+{
+if(document.getElementById("c2").checked==true)
+{
+alert("Correct answer!");
+ques2=10;
+scre+=ques2;
+}
+else
+{
+alert("Wrong answer.");
+ques2=-5;
+scre+=ques2;
+}
+}
+document.getElementById("q2disp").innerHTML="Question 2: "+ques2;
+document.getElementById("scredisp").innerHTML="Total Score: "+scre;
+disp('q3');
+}
+
+function ans3()
+{
+if(curr[ci]=='q3')
+{
+if(document.getElementById("c3").checked==true)
+{
+alert("Correct answer!");
+ques3=10;
+scre+=ques3;
+}
+else
+{
+alert("Wrong answer.");
+ques3=-5;
+scre+=ques3;
+}
+}
+document.getElementById("q3disp").innerHTML="Question 3: "+ques3;
+document.getElementById("scredisp").innerHTML="Total Score: "+scre;
+disp('q4');
+}
+
+function ans4()
+{
+if(curr[ci]=='q4')
+{
+if(document.getElementById("c4").checked==true)
+{
+alert("Correct answer!");
+ques4=10;
+scre+=ques4;
+}
+else
+{
+alert("Wrong answer.");
+ques4=-5;
+scre+=ques4;
+}
+}
+document.getElementById("q4disp").innerHTML="Question 4: "+ques4;
+document.getElementById("scredisp").innerHTML="Total Score: "+scre;
+vidplay();
+disp('q5');
+}
+
+function ans5()
+{
+if(curr[ci]=='q5')
+{
+if(document.getElementById("c5").checked==true)
+{
+alert("Correct answer!");
+ques5=10;
+scre+=ques5;
+}
+else
+{
+alert("Wrong answer.");
+ques5=-5;
+scre+=ques5;
+}
+}
+if(scre>=20)
+{
+document.getElementById("failure").style.display="none";
+document.getElementById("success").style.display="block";
+}
+else
+{
+document.getElementById("success").style.display="none";
+document.getElementById("failure").style.display="block";
+}
+document.getElementById("endscr").innerHTML="Total Score: "+scre;
+document.getElementById("q5disp").innerHTML="Question 5: "+ques5;
+document.getElementById("scredisp").innerHTML="Total Score: "+scre;
+disp('finish');
+sort();
+}
+
+function sort()
+{
+obj[co]={s:scre,u:usernm};
+co++;
+obj.sort(function(a, b){
+    return b.s-a.s
+});
+document.getElementById("l1").innerHTML="1. "+obj[0].u+" - "+obj[0].s;
+if(co>=1)
+document.getElementById("l2").innerHTML="2. "+obj[1].u+" - "+obj[1].s;
+if(co>=2)
+document.getElementById("l3").innerHTML="3. "+obj[2].u+" - "+obj[2].s;
+if(co>=3)
+document.getElementById("l4").innerHTML="4. "+obj[3].u+" - "+obj[3].s;
+if(co>=4)
+document.getElementById("l5").innerHTML="5. "+obj[4].u+" - "+obj[4].s;
+}
+
+function vidplay() 
+{
+    var video = document.getElementById("vid");
+    video.play();
+}
+</script>
+
+</body>
+</html>
